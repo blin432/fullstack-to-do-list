@@ -75,6 +75,10 @@ function editTask(presentTaskId){
             var newEditedTask=res.data.todo;
             var edited=document.getElementById(`list-${presentTaskId}`);
             edited.textContent=res.data.todo;
+            var showChangeButton= document.getElementById(`save-button${presentTaskId}`);
+            var showEditField = document.getElementById(`edit-field${presentTaskId}`);
+            showChangeButton.style.setProperty("display","none");
+            showEditField.style.setProperty("display","none");
         }).catch(function(err){
             console.log(err);
         });
